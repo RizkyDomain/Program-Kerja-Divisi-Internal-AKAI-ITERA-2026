@@ -88,7 +88,7 @@
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.6;
-            max-width: 800px;
+            text-align: left;
             margin: 0 auto;
             padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -156,7 +156,7 @@
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: 20px;
-            padding: 2rem;
+            padding: 2.5rem;
             margin-bottom: 1.75rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
@@ -197,19 +197,21 @@
         .program-title {
             font-size: 1.4rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             max-width: 75%;
             color: #ffffff;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         /* Card Content Rows */
         .info-block {
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
         }
         
         .info-block.last {
             margin-bottom: 0;
-            padding-top: 1rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -218,37 +220,32 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--text-muted);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
             font-weight: 600;
         }
 
         .value {
             font-size: 0.95rem;
             color: var(--text-secondary);
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* Horizontal Meta Data Layout */
+        /* Grid Layout for Meta Data to accommodate long text */
         .meta-group {
-            display: table;
-            width: 100%;
-            margin-top: 1rem;
-        }
-
-        .meta-item {
-            display: table-cell;
-            width: 33.33%;
-            vertical-align: top;
-            padding-right: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
         @media (max-width: 768px) {
             body { padding: 2rem 1rem; }
             header { padding: 1.75rem; }
             h1 { font-size: 1.8rem; }
-            .meta-item { display: block; width: 100%; margin-bottom: 1rem; padding-right: 0; }
+            .meta-group { grid-template-columns: 1fr; }
             .program-title { max-width: 100%; font-size: 1.25rem; }
             .card-badge { position: relative; top: 0; right: 0; display: inline-block; margin-bottom: 1rem; }
+            .program-card { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -262,10 +259,10 @@
 
         <!-- Header Section -->
         <header>
-            <h1>Divisi Internal AKAI ITERA 2026</h1>
-            <div class="subtitle">Ketua Divisi: Rafael Athaillah Kurniawan (Teknik Elektro 2024)</div>
+            <h1>Divisi Internal AKAI ITERA</h1>
+            <div class="subtitle">Ketua Divisi Internal: Rafael Athaillah Kurniawan (Teknik Elektro 2024)</div>
             <div class="pendahuluan">
-                <strong>Pendahuluan:</strong> Berfokus menjaga dan mempererat keharmonisan serta rasa kekeluargaan dalam lingkungan AKAI ITERA, sekaligus membangun hubungan sinergis yang solid antaranggota melalui program kerja adaptif sesuai tugas dan fungsi divisi.
+                <strong>Pendahuluan:</strong><br><br>Divisi internal memiliki tugas dan fungsi utama untuk menjaga serta mempererat keharmonisan dalam lingkungan AKAI ITERA, sekaligus membangun hubungan yang baik dan rasa kebersamaan antar anggota AKAI ITERA. Berdasarkan hal tersebut, seluruh program kerja divisi internal akan difokuskan pada pelaksanaan dan pemenuhan tujuan utama divisi sesuai dengan tugas dan fungsinya.
             </div>
         </header>
 
@@ -287,121 +284,141 @@
                 <div class="program-title">Buka Bersama</div>
                 
                 <div class="info-block">
-                    <div class="label">Latar Belakang & Deskripsi</div>
-                    <div class="value">Pelestarian budaya kebersamaan di Bulan Ramadan melalui agenda silaturahmi dan kegiatan interaktif nonformal menjelang waktu berbuka puasa.</div>
+                    <div class="label">Latar Belakang</div>
+                    <div class="value">Puasa Ramadan merupakan event spiritual tahunan umat Islam yang merupakan kepercayaan mayoritas di Indonesia, dan berbuka puasa bersama adalah salah satu kegiatan yang telah menjadi budaya untuk dilakukan oleh segala kelompok kalangan setiap Bulan Ramadan.</div>
+                </div>
+
+                <div class="info-block">
+                    <div class="label">Deskripsi Kegiatan</div>
+                    <div class="value">Mengadakan kumpulan ketika sedang berpuasa di Bulan Ramadan untuk bersosialisasi sembari menunggu waktu berbuka puasa.</div>
                 </div>
 
                 <div class="meta-group">
                     <div class="meta-item">
                         <div class="label">Tujuan</div>
-                        <div class="value">Mempererat kekeluargaan dan solidaritas antaranggota.</div>
+                        <div class="value">Untuk mempererat kekeluargaan dan kebersamaan antara sesama anggota AKAI ITERA.</div>
                     </div>
                     <div class="meta-item">
                         <div class="label">Sasaran</div>
-                        <div class="value">Seluruh Anggota AKAI ITERA.</div>
+                        <div class="value">Seluruh Anggota AKAI ITERA</div>
                     </div>
                     <div class="meta-item">
-                        <div class="label">Waktu</div>
-                        <div class="value">Tentatif (Bulan Ramadan).</div>
+                        <div class="label">Waktu Pelaksanaan</div>
+                        <div class="value">(Tentatif)</div>
                     </div>
                 </div>
 
                 <div class="info-block last">
                     <div class="label">Parameter Keberhasilan</div>
-                    <div class="value">Terlaksana tepat waktu dengan kehadiran minimal 20 anggota.</div>
+                    <div class="value">Terlaksana tepat waktu dan dihadiri oleh sekurang-kurangnya 20 anggota AKAI ITERA</div>
                 </div>
             </div>
 
             <!-- Welcome Party -->
             <div class="program-card card-pendek">
                 <span class="card-badge pendek">Jangka Pendek</span>
-                <div class="program-title">Welcome Party Anggota Baru</div>
+                <div class="program-title">Welcome Party Anggota Baru AKAI ITERA</div>
                 
                 <div class="info-block">
-                    <div class="label">Latar Belakang & Deskripsi</div>
-                    <div class="value">Acara penyambutan nonformal yang interaktif bagi anggota baru untuk beradaptasi, saling mengenal pengurus, serta memangkas jarak dengan anggota lama.</div>
+                    <div class="label">Latar Belakang</div>
+                    <div class="value">Welcome Party anggota baru AKAI ITERA diadakan sebagai kegiatan nonformal untuk menyambut dan membantu anggota baru agar lebih mengenal lingkungan organisasi, pengurus, serta sesama anggota. Melalui suasana yang santai dan menyenangkan, kegiatan ini diharapkan dapat menciptakan rasa nyaman, mempererat kebersamaan, dan membangun hubungan yang harmonis di dalam AKAI ITERA.</div>
+                </div>
+
+                <div class="info-block">
+                    <div class="label">Deskripsi Kegiatan</div>
+                    <div class="value">Mengadakan acara Welcome Party yang bersifat kekeluargaan non-formal yang menciptakan suasana tanpa adanya jarak diantara anggota baru dan anggota lama.</div>
                 </div>
 
                 <div class="meta-group">
                     <div class="meta-item">
                         <div class="label">Tujuan</div>
-                        <div class="value">Membangun keakraban awal dan kenyamanan adaptasi anggota baru.</div>
+                        <div class="value">Tujuan dari Welcome Party adalah untuk mempererat hubungan antar anggota, membantu anggota baru beradaptasi dengan lingkungan AKAI ITERA, serta menciptakan suasana kekeluargaan yang nyaman dan harmonis.</div>
                     </div>
                     <div class="meta-item">
                         <div class="label">Sasaran</div>
-                        <div class="value">Anggota baru terlantik & pengurus/anggota lama.</div>
+                        <div class="value">Seluruh anggota baru yang telah resmi dilantik/diresmikan beserta anggota lama AKAI ITERA.</div>
                     </div>
                     <div class="meta-item">
-                        <div class="label">Waktu</div>
-                        <div class="value">1-2 Minggu pasca-pelantikan (Tentatif).</div>
+                        <div class="label">Waktu Pelaksanaan</div>
+                        <div class="value">1 - 2 minggu setelah peresmian anggota baru AKAI ITERA(tentatif)</div>
                     </div>
                 </div>
 
                 <div class="info-block last">
                     <div class="label">Parameter Keberhasilan</div>
-                    <div class="value">Terciptanya interaksi aktif, suasana nyaman, dan peningkatan keakraban antar-elemen organisasi.</div>
+                    <div class="value">Terciptanya interaksi yang baik antar anggota baru dan anggota lama, meningkatnya keakraban anggota baru dengan pengurus maupun anggota lainnya, serta terciptanya suasana kegiatan yang aktif, nyaman, dan menyenangkan.</div>
                 </div>
             </div>
 
             <!-- First Gathering -->
             <div class="program-card card-pendek">
                 <span class="card-badge pendek">Jangka Pendek</span>
-                <div class="program-title">First Gathering Calon Anggota</div>
+                <div class="program-title">First Gathering Calon Anggota AKAI ITERA TA 2026/2027</div>
                 
                 <div class="info-block">
-                    <div class="label">Latar Belakang & Deskripsi</div>
-                    <div class="value">Pertemuan perdana sebagai media penyambutan dan pengenalan singkat mengenai profil serta lingkup aktivitas organisasi kepada calon penerus AKAI.</div>
+                    <div class="label">Latar Belakang</div>
+                    <div class="value">Calon anggota baru AKAI ITERA adalah para calon penerus berjalannya AKAI ITERA, sehingga diperlukan adanya penyambutan dan pengenalan singkat mengenai AKAI ITERA.</div>
+                </div>
+
+                <div class="info-block">
+                    <div class="label">Deskripsi Kegiatan</div>
+                    <div class="value">Mengadakan acara perkumpulan untuk para calon anggota baru AKAI ITERA yang berisi pengenalan singkat mengenai lingkungan dan lingkup aktivitas AKAI ITERA.</div>
                 </div>
 
                 <div class="meta-group">
                     <div class="meta-item">
                         <div class="label">Tujuan</div>
-                        <div class="value">Wadah silaturahmi perdana sekaligus memberikan gambaran awal aktivitas AKAI.</div>
+                        <div class="value">Untuk mewadahi para calon anggota baru AKAI ITERA agar mendapatkan gambaran mengenai aktivitas AKAI ITERA dan agar sesama calon anggota baru dapat lebih saling mengenal.</div>
                     </div>
                     <div class="meta-item">
                         <div class="label">Sasaran</div>
-                        <div class="value">Calon anggota baru TA 2026/2027.</div>
+                        <div class="value">Calon anggota baru AKAI ITERA</div>
                     </div>
                     <div class="meta-item">
-                        <div class="label">Waktu</div>
-                        <div class="value">Awal Tahun Ajaran 2026/2027 (Tentatif).</div>
+                        <div class="label">Waktu Pelaksanaan</div>
+                        <div class="value">Awal tahun ajaran 2026/2027 (Tentatif)</div>
                     </div>
                 </div>
 
                 <div class="info-block last">
                     <div class="label">Parameter Keberhasilan</div>
-                    <div class="value">Terlaksana tanpa kendala teknis dan menunjukkan peningkatan kualitas dari tahun sebelumnya.</div>
+                    <div class="value">Terlaksana tanpa kendala dan mengalami peningkatan dibanding tahun sebelumnya</div>
                 </div>
             </div>
 
             <!-- Kaderisasi -->
             <div class="program-card card-panjang">
                 <span class="card-badge panjang">Jangka Panjang</span>
-                <div class="program-title">Kaderisasi Calon Anggota Baru</div>
+                <div class="program-title">Kaderisasi Calon Anggota Baru AKAI ITERA</div>
                 
                 <div class="info-block">
-                    <div class="label">Latar Belakang & Deskripsi</div>
-                    <div class="value">Implementasi mandat AD/ART berupa rangkaian pembinaan resmi yang edukatif, humanis, tanpa kekerasan/perploncoan untuk mengenalkan nilai internal organisasi secara mendalam.</div>
+                    <div class="label">Latar Belakang</div>
+                    <div class="value">Dalam rangka menjalankan mandat pada AD/ART AKAI ITERA, dan sekaligus menjadi pintu gerbang bagi calon anggota baru untuk dapat memasuki rumah AKAI ITERA, serta menjadi ajang untuk memperkenalkan secara lebih jauh mengenai AKAI ITERA, maka terdapat urgensi terkait dilaksanakannya kaderisasi untuk calon anggota baru AKAI ITERA.</div>
+                </div>
+
+                <div class="info-block">
+                    <div class="label">Deskripsi Kegiatan</div>
+                    <div class="value">Melakukan rangkaian kaderisasi yang lebih kekeluargaan, tanpa kekerasan dan perploncoan, serta tetap menjaga harkat dan martabat segala pihak dengan mekanisme yang akan diatur kemudian.</div>
                 </div>
 
                 <div class="meta-group">
                     <div class="meta-item">
                         <div class="label">Tujuan</div>
-                        <div class="value">Menanamkan nilai dasar AKAI dan menyaring kader berdedikasi tinggi.</div>
+                        <div class="value">Untuk memperkenalkan AKAI ITERA secara lebih mendetail kepada para calon anggota baru, serta menyaring calon anggota yang memiliki dedikasi untuk mengikuti aktivitas AKAI ITERA.</div>
                     </div>
                     <div class="meta-item">
                         <div class="label">Sasaran</div>
-                        <div class="value">Calon anggota baru AKAI ITERA.</div>
+                        <div class="value">Calon anggota baru AKAI ITERA</div>
                     </div>
                     <div class="meta-item">
-                        <div class="label">Waktu</div>
-                        <div class="value">Tentatif (Pasca-Open Recruitment selesai).</div>
+                        <div class="label">Waktu Pelaksanaan</div>
+                        <div class="value">Tentatif (Akan dijadwalkan dan disesuaikan kembali setelah agenda First Gathering dan proses Open Recruitment Anggota Baru selesai dilaksanakan).</div>
                     </div>
                 </div>
 
                 <div class="info-block last">
                     <div class="label">Parameter Keberhasilan</div>
-                    <div class="value">Calon anggota memahami esensi organisasi secara komprehensif tanpa adanya tekanan atau intimidasi.</div>
+                    <div class="value">Para calon anggota baru dapat lebih memahami mengenai AKAI ITERA tanpa ada perasaan tertekan dan terintimidasi.</div>
                 </div>
             </div>
 
@@ -411,28 +428,33 @@
                 <div class="program-title">AKAI Gerakin Badan</div>
                 
                 <div class="info-block">
-                    <div class="label">Latar Belakang & Deskripsi</div>
-                    <div class="value">Wadah penyaluran aspirasi anggota melalui kegiatan olahraga rutin bersama (futsal, bulu tangkis, voli, dll.) sebagai media penyegaran di luar jam akademik.</div>
+                    <div class="label">Latar Belakang</div>
+                    <div class="value">Program ini diinisiasi berdasarkan aspirasi dan kebutuhan anggota AKAI ITERA akan sebuah wadah rutin yang dapat mempererat tali silaturahmi, sekaligus membangun rasa kebersamaan di luar aktivitas akademik</div>
+                </div>
+
+                <div class="info-block">
+                    <div class="label">Deskripsi Kegiatan</div>
+                    <div class="value">Mengadakan kegiatan rutin olahraga untuk anggota AKAI ITERA, baik itu berupa futsal, bulu tangkis, voli, basket, dsb. Dengan target diusahakan terlaksana minimal sekali dalam 2 bulan</div>
                 </div>
 
                 <div class="meta-group">
                     <div class="meta-item">
                         <div class="label">Tujuan</div>
-                        <div class="value">Menjaga kebugaran fisik sekaligus mempererat solidaritas berkala.</div>
+                        <div class="value">Untuk mempererat solidaritas dan hubungan kekeluargaan antaranggota AKAI ITERA, sekaligus menjaga kebugaran jasmani melalui aktivitas fisik yang interaktif dan menyenangkan.</div>
                     </div>
                     <div class="meta-item">
                         <div class="label">Sasaran</div>
-                        <div class="value">Seluruh anggota AKAI ITERA.</div>
+                        <div class="value">Seluruh anggota AKAI ITERA</div>
                     </div>
                     <div class="meta-item">
-                        <div class="label">Waktu</div>
-                        <div class="value">Rutin, minimal 1 kali per 2 bulan (Tentatif).</div>
+                        <div class="label">Waktu Pelaksanaan</div>
+                        <div class="value">Tentatif (Jadwal akan ditentukan kemudian dengan mempertimbangkan waktu senggang dari jadwal kegiatan akademik anggota).</div>
                     </div>
                 </div>
 
                 <div class="info-block last">
                     <div class="label">Parameter Keberhasilan</div>
-                    <div class="value">Terlaksana konsisten dan dihadiri sekurang-kurangnya 10 anggota pada setiap sesi.</div>
+                    <div class="value">Terlaksana secara rutin dan dihadiri sekurang-kurangnya oleh 10 orang anggota AKAI ITERA</div>
                 </div>
             </div>
 
@@ -442,28 +464,33 @@
                 <div class="program-title">AKAI Gaming Session</div>
                 
                 <div class="info-block">
-                    <div class="label">Latar Belakang & Deskripsi</div>
-                    <div class="value">Aktivitas bermain game bersama (kompetitif maupun kasual) sebagai sarana hiburan (*refreshing*) digital untuk menstimulasi komunikasi yang aktif dan harmonis.</div>
+                    <div class="label">Latar Belakang</div>
+                    <div class="value">AKAI Gaming Session diadakan sebagai wadah hiburan dan kebersamaan bagi anggota AKAI ITERA melalui kegiatan bermain game bersama. Program kerja ini bertujuan untuk menciptakan suasana internal yang lebih akrab, aktif, dan harmonis.</div>
+                </div>
+
+                <div class="info-block">
+                    <div class="label">Deskripsi Kegiatan</div>
+                    <div class="value">Mengadakan sebuah Gaming Session untuk mempererat Keharmonisan antar Anggota, dimulai dari game kompetitif hingga membagikan pengalaman game yang dimainkan satu sama lain.</div>
                 </div>
 
                 <div class="meta-group">
                     <div class="meta-item">
                         <div class="label">Tujuan</div>
-                        <div class="value">Meningkatkan interaksi santai dan kebersamaan berbasis hobi.</div>
+                        <div class="value">Tujuan dari program kerja AKAI Gaming Session adalah untuk mempererat hubungan antar anggota AKAI ITERA, meningkatkan kebersamaan dan komunikasi, serta menjadi sarana hiburan dan refreshing melalui kegiatan bermain game bersama.</div>
                     </div>
                     <div class="meta-item">
                         <div class="label">Sasaran</div>
-                        <div class="value">Seluruh anggota AKAI ITERA.</div>
+                        <div class="value">Seluruh anggota AKAI ITERA</div>
                     </div>
                     <div class="meta-item">
-                        <div class="label">Waktu</div>
-                        <div class="value">Rutin, minimal 1 kali per 2 bulan (Tentatif).</div>
+                        <div class="label">Waktu Pelaksanaan</div>
+                        <div class="value">(Tentatif, dengan target diusahakan minimal sekali dalam 2 bulan)</div>
                     </div>
                 </div>
 
                 <div class="info-block last">
                     <div class="label">Parameter Keberhasilan</div>
-                    <div class="value">Diikuti secara aktif oleh minimal 10-15 anggota per sesi.</div>
+                    <div class="value">Di ikuti sekurang-kurangnya 10-15 orang anggota AKAI ITERA</div>
                 </div>
             </div>
 
